@@ -6,67 +6,50 @@
 <title>Remolques MX - Premium</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 <style>
-/* Fuente moderna */
+/* Fondo premium madera con overlay */
 body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  background: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg') no-repeat center center fixed;
+  color:#fff;
+  background: linear-gradient(rgba(45,25,10,0.75), rgba(30,15,5,0.75)), 
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') 
+              no-repeat center center fixed;
   background-size: cover;
-  perspective: 1px;
 }
 
-/* Parallax en secciones */
-.parallax {
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
-/* Animaciones al scroll */
-.fade-in {
-  opacity:0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
-}
-.fade-in.visible {
-  opacity:1;
-  transform: translateY(0);
-}
-
-/* Secciones premium con gradiente dorado-rojo */
+/* Secciones */
 section {
+  background: rgba(0,0,0,0.7);
   border-radius: 1rem;
   padding: 3rem 2rem;
   margin: 3rem auto;
-  max-width: 1200px;
+  max-width: 1100px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  background: linear-gradient(135deg, #b91c1c 0%, #fbbf24 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 section:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(0,0,0,0.7);
 }
 
+/* Titulos */
 h2 {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2.5rem;
-  color: #fff;
   text-align:center;
   margin-bottom:1rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  color:#fbbf24;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-/* Botones premium con gradiente y 3D hover */
+/* Botones premium */
 .btn-premium {
   background: linear-gradient(45deg,#b91c1c,#fbbf24);
   color:#fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  font-weight:600;
+  padding:0.75rem 1.5rem;
+  border-radius:0.75rem;
+  font-weight:700;
   text-decoration:none;
   box-shadow:0 6px 18px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
@@ -89,22 +72,19 @@ h2 {
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:28px;
+  font-size:30px;
   box-shadow:0 5px 20px rgba(0,0,0,0.7);
   z-index:1000;
   transition: all 0.3s ease;
 }
-.whatsapp-float:hover {
-  transform: scale(1.2);
-  background-color: #4ade80;
-}
+.whatsapp-float:hover { transform: scale(1.2); }
 
-/* Cartas de catálogo animadas */
+/* Cartas de catálogo */
 .catalog-card {
-  background: linear-gradient(45deg,#b91c1c,#fbbf24);
+  background: linear-gradient(135deg,#b91c1c,#fbbf24);
   border-radius:.75rem;
   padding:2rem;
-  font-weight:600;
+  font-weight:700;
   text-align:center;
   transition: all 0.4s ease, transform 0.5s ease;
   color:#fff;
@@ -113,6 +93,17 @@ h2 {
 .catalog-card:hover {
   transform: scale(1.08) translateY(-10px);
   box-shadow:0 15px 30px rgba(0,0,0,0.7);
+}
+
+/* Animación fade-in */
+.fade-in {
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.fade-in.visible {
+  opacity:1;
+  transform: translateY(0);
 }
 
 /* Responsive */
@@ -132,16 +123,16 @@ h2 {
 </header>
 
 <!-- Hero -->
-<section class="text-center fade-in parallax">
+<section class="text-center fade-in">
   <h2>Fabricación de Remolques Premium</h2>
   <p class="mb-6 text-lg max-w-2xl mx-auto">
-    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado. Diseño elegante, resistente y único.
+    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado.
   </p>
-  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-xl shadow-2xl">
+  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl">
 </section>
 
 <!-- Catálogo -->
-<section class="fade-in parallax">
+<section class="fade-in">
   <h2>Catálogo de Remolques</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
   <div class="grid md:grid-cols-3 gap-6">
@@ -154,21 +145,21 @@ h2 {
 </section>
 
 <!-- Herrería -->
-<section class="fade-in parallax">
+<section class="fade-in">
   <h2>Herrería</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Toldos, rejas, portones, ventanas, puertas y más, fabricados con precisión y estilo.</p>
   <div class="catalog-card">🛠 Proyectos de Herrería Personalizados</div>
 </section>
 
 <!-- Productos -->
-<section class="fade-in parallax">
+<section class="fade-in">
   <h2>Productos en Mercado Libre & Amazon</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Accesorios listos para envío inmediato.</p>
   <div class="catalog-card">🛒 Accesorios para remolques</div>
 </section>
 
 <!-- Contacto -->
-<section class="fade-in parallax">
+<section class="fade-in">
   <h2>Contacto</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
   <div class="flex flex-col md:flex-row justify-around items-center gap-6">
@@ -177,7 +168,7 @@ h2 {
     <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
   </div>
   <div class="mt-8">
-    <iframe class="w-full h-64 rounded-xl shadow-2xl" 
+    <iframe class="w-full h-64 rounded-2xl shadow-2xl" 
       src="https://maps.google.com/maps?q=Guadalajara,%20Jalisco&t=&z=13&ie=UTF8&iwloc=&output=embed" 
       frameborder="0" allowfullscreen>
     </iframe>
@@ -195,7 +186,7 @@ h2 {
 </a>
 
 <script>
-// Animaciones al hacer scroll
+// Animación fade-in al scroll
 const faders = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -205,7 +196,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold:0.2 });
-
 faders.forEach(fader => observer.observe(fader));
 </script>
 
