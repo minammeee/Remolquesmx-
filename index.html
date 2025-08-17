@@ -11,8 +11,8 @@ body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color:#fff;
-  background: linear-gradient(rgba(25,15,5,0.75), rgba(15,10,5,0.75)), 
-              url('https://images.unsplash.com/photo-1556912990-df6a5b5b7f4f?auto=format&fit=crop&w=1920&q=80') 
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80') 
               no-repeat center center fixed;
   background-size: cover;
 }
@@ -55,25 +55,6 @@ h2 {
   transform: translateY(-4px) scale(1.05);
 }
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #16a34a;
-  color: #fff;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.7);
-  z-index:1000;
-  transition: all 0.3s ease;
-}
-.whatsapp-float:hover { transform: scale(1.2); }
-
 .catalog-card {
   background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
   border-radius:.75rem;
@@ -107,15 +88,11 @@ h2 {
 <body>
 
 <!-- Header -->
-<header class="bg-[#2c1f1f] text-white py-6 shadow-lg">
+<header class="bg-[#2c1f1f]/80 text-white py-6 shadow-lg backdrop-blur-md">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
     <div class="flex items-center gap-4">
-      <img src="https://i.imgur.com/tu4Vb8P.png" alt="Remolques MX Logo" class="h-12 w-auto">
+      <img src="https://i.imgur.com/cIpRBod.png" alt="Remolques MX Logo" class="h-12 w-auto">
       <h1 class="text-3xl font-bold mb-3 md:mb-0">Remolques MX</h1>
-    </div>
-    <div class="flex gap-4">
-      <a href="https://wa.me/523347540496" target="_blank" class="btn-premium">WhatsApp</a>
-      <a href="https://www.facebook.com/share/1GmuRthMFn/" target="_blank" class="btn-premium">Facebook</a>
     </div>
   </div>
 </header>
@@ -155,8 +132,6 @@ h2 {
   <h2>Contacto</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
   <div class="flex flex-col md:flex-row justify-around items-center gap-6">
-    <a href="https://wa.me/523347540496" target="_blank" class="btn-premium px-6 py-3">WhatsApp</a>
-    <a href="https://www.facebook.com/share/1GmuRthMFn/" target="_blank" class="btn-premium px-6 py-3">Facebook</a>
     <p class="text-lg font-semibold">📞 Tel: +52 33 4754 0496</p>
     <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
   </div>
@@ -169,18 +144,9 @@ h2 {
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#2c1f1f] text-white py-6 mt-12 text-center">
+<footer class="bg-[#2c1f1f]/80 text-white py-6 mt-12 text-center backdrop-blur-md">
   © 2025 Remolques MX - Todos los derechos reservados
 </footer>
-
-<!-- Botones flotantes WhatsApp y Facebook -->
-<a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="https://www.facebook.com/share/1GmuRthMFn/" class="whatsapp-float" target="_blank" style="right: 90px; background-color: #1877F2;">
-  <i class="fab fa-facebook-f"></i>
-</a>
 
 <script>
 // Animación fade-in al scroll
@@ -197,4 +163,4 @@ faders.forEach(fader => observer.observe(fader));
 </script>
 
 </body>
-      </html>
+</html>
