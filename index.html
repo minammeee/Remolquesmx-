@@ -7,43 +7,61 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
-        background-image: url('https://i.ibb.co/p3KhB1B/wood-texture.jpg');
+        /* Fondo estilo madera sutil */
+        background-image: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg');
         background-size: cover;
         background-attachment: fixed;
+        color: #1f2937; /* Texto oscuro y profesional */
       }
       section {
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 1rem;
         padding: 2rem;
         margin: 2rem auto;
         max-width: 1100px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
       }
-      /* Botón flotante de WhatsApp */
+      h2 {
+        color: #3b2f2f; /* Marrón oscuro elegante */
+      }
+      /* Botón flotante de WhatsApp con colores más suaves */
       .whatsapp-float {
         position: fixed;
         width: 60px;
         height: 60px;
         bottom: 20px;
         right: 20px;
-        background-color: #25d366;
+        background-color: #4b2c20; /* Marrón oscuro */
         color: #fff;
         border-radius: 50px;
         text-align: center;
         font-size: 30px;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
         z-index: 100;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
       }
       .whatsapp-float:hover {
         transform: scale(1.1);
-        background-color: #1ebe5d;
+        background-color: #6b4e31; /* Marrón más claro al pasar */
+      }
+      .btn-custom {
+        background-color: #4b2c20;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        text-decoration: none;
+      }
+      .btn-custom:hover {
+        background-color: #6b4e31;
+        transform: translateY(-2px);
       }
     </style>
-    <!-- Icono de WhatsApp -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -51,13 +69,13 @@
   </head>
   <body class="font-sans text-gray-800">
     <!-- Header -->
-    <header class="bg-black bg-opacity-70 text-white py-6 shadow-lg">
+    <header class="bg-[#3b2f2f] text-white py-6 shadow-lg">
       <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
         <h1 class="text-3xl font-bold">Remolques MX</h1>
         <a
           href="https://wa.me/523347540496"
           target="_blank"
-          class="bg-green-500 px-4 py-2 rounded-lg shadow hover:bg-green-600 transition"
+          class="btn-custom"
         >
           Cotiza en WhatsApp
         </a>
@@ -85,16 +103,14 @@
         Próximamente podrás ver aquí todos nuestros modelos: carga, RZR,
         ganaderos, food trucks y multiuso.
       </p>
-      <div
-        class="grid md:grid-cols-3 gap-6 text-center font-semibold text-gray-600"
-      >
-        <div class="border-2 border-dashed p-6 rounded-lg">
+      <div class="grid md:grid-cols-3 gap-6 text-center font-semibold text-gray-700">
+        <div class="border-2 border-[#6b4e31] p-6 rounded-lg bg-[#f5ede5]">
           📦 Espacio para catálogo
         </div>
-        <div class="border-2 border-dashed p-6 rounded-lg">
+        <div class="border-2 border-[#6b4e31] p-6 rounded-lg bg-[#f5ede5]">
           📦 Espacio para catálogo
         </div>
-        <div class="border-2 border-dashed p-6 rounded-lg">
+        <div class="border-2 border-[#6b4e31] p-6 rounded-lg bg-[#f5ede5]">
           📦 Espacio para catálogo
         </div>
       </div>
@@ -106,9 +122,7 @@
       <p class="text-center mb-6">
         Toldos, rejas, portones, ventanas, puertas y mucho más.
       </p>
-      <div
-        class="border-2 border-dashed p-6 rounded-lg text-center font-semibold text-gray-600"
-      >
+      <div class="border-2 border-[#6b4e31] p-6 rounded-lg text-center font-semibold text-gray-700 bg-[#f5ede5]">
         🛠 Espacio para mostrar trabajos de herrería
       </div>
     </section>
@@ -119,12 +133,9 @@
         Productos en Mercado Libre & Amazon
       </h2>
       <p class="text-center mb-6">
-        Aquí podrás encontrar productos básicos y accesorios listos para envío
-        inmediato.
+        Aquí podrás encontrar productos básicos y accesorios listos para envío inmediato.
       </p>
-      <div
-        class="border-2 border-dashed p-6 rounded-lg text-center font-semibold text-gray-600"
-      >
+      <div class="border-2 border-[#6b4e31] p-6 rounded-lg text-center font-semibold text-gray-700 bg-[#f5ede5]">
         🛒 Espacio para productos de e-commerce
       </div>
     </section>
@@ -139,12 +150,12 @@
         <a
           href="https://wa.me/523347540496"
           target="_blank"
-          class="bg-green-500 px-6 py-3 rounded-xl text-white font-bold shadow hover:bg-green-600 transition"
+          class="btn-custom px-6 py-3"
         >
           WhatsApp
         </a>
-        <p class="text-lg">📞 Tel: +52 33 4754 0496</p>
-        <p class="text-lg">✉️ Email: contacto@remolquesmx.com</p>
+        <p class="text-lg font-semibold">📞 Tel: +52 33 4754 0496</p>
+        <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
       </div>
       <div class="mt-8">
         <iframe
@@ -157,10 +168,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black bg-opacity-80 text-white py-6 mt-12">
-      <div class="text-center">
-        © 2025 Remolques MX - Todos los derechos reservados
-      </div>
+    <footer class="bg-[#3b2f2f] text-white py-6 mt-12 text-center">
+      © 2025 Remolques MX - Todos los derechos reservados
     </footer>
 
     <!-- Botón flotante WhatsApp -->
