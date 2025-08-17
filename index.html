@@ -11,11 +11,8 @@ body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color:#fff;
-  /* Fondo de madera premium con vetas horizontales */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url('https://images.unsplash.com/photo-1581091870622-9f37e330e8b1?auto=format&fit=crop&w=1920&q=80') 
-              repeat-x center center fixed;
-  background-size: cover;
+  /* Fondo neutro oscuro para resaltar contenido */
+  background: linear-gradient(rgba(25,15,5,0.75), rgba(15,10,5,0.75));
 }
 
 header {
@@ -27,7 +24,7 @@ header {
 }
 
 header img {
-  height: 120px; /* Logo grande */
+  height: 120px;
   width: auto;
   margin-bottom: 1rem;
 }
@@ -103,6 +100,25 @@ h2 {
   transform: translateY(0);
 }
 
+.whatsapp-float, .facebook-float {
+  position: fixed;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.7);
+  z-index:1000;
+  transition: all 0.3s ease;
+}
+.whatsapp-float { right: 20px; background-color: #16a34a; }
+.facebook-float { right: 90px; background-color: #1877F2; }
+.whatsapp-float:hover, .facebook-float:hover { transform: scale(1.2); }
+
 @media(max-width:768px){
   section { padding: 2rem 1rem; }
   header h1 { font-size: 2.2rem; }
@@ -136,7 +152,11 @@ h2 {
 <section class="fade-in text-center">
   <h2>Catálogo General</h2>
   <p class="mb-6 text-lg max-w-xl mx-auto">Consulta todos nuestros modelos y productos prefabricados en un solo lugar.</p>
-  <a href="#" class="btn-premium px-8 py-4">Catálogo General</a>
+  <a href="https://docs.google.com/document/d/1Yf0TRv08c-ODjk5Sghi_abbhvwv9fFWFV_STx8ebjyA/mobilebasic" 
+     target="_blank" 
+     class="btn-premium px-8 py-4">
+     Catálogo General
+  </a>
 </section>
 
 <!-- Herrería -->
@@ -179,6 +199,15 @@ h2 {
   © 2025 Remolques MX - Todos los derechos reservados
 </footer>
 
+<!-- Botones flotantes WhatsApp y Facebook -->
+<a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://www.facebook.com/share/1GmuRthMFn/" class="facebook-float" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
 <script>
 // Animación fade-in al scroll
 const faders = document.querySelectorAll('.fade-in');
@@ -194,4 +223,4 @@ faders.forEach(fader => observer.observe(fader));
 </script>
 
 </body>
-</html>
+    </html>
