@@ -8,86 +8,107 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
-  /* Fondo parallax madera */
-  body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    margin:0;
-    background: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #1f2937;
-  }
-  section {
-    background: rgba(255,255,255,0.95);
-    border-radius: 1rem;
-    padding: 3rem 2rem;
-    margin: 3rem auto;
-    max-width: 1200px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease-in-out;
-  }
-  section:hover { transform: translateY(-5px); }
+body {
+  margin:0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-  h2 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #3b2f2f;
-    text-align:center;
-    margin-bottom:1rem;
-  }
+/* Animaciones al scroll */
+.fade-in {
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.fade-in.visible {
+  opacity:1;
+  transform: translateY(0);
+}
 
-  /* Botones premium */
-  .btn-premium {
-    background-color: #4b2c20;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-weight:600;
-    text-decoration:none;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-  }
-  .btn-premium:hover {
-    background-color:#6b4e31;
-    transform: translateY(-3px);
-  }
+/* Secciones premium con colores fuertes */
+section {
+  background: rgba(59, 47, 47, 0.95);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
 
-  /* Botón flotante WhatsApp */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #4b2c20;
-    color: #fff;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:28px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
-    z-index:1000;
-    transition: all 0.3s ease;
-  }
-  .whatsapp-float:hover {
-    transform: scale(1.2);
-    background-color: #6b4e31;
-  }
+h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #fbbf24; /* dorado fuerte */
+  text-align:center;
+  margin-bottom:1rem;
+}
 
-  /* Catálogo premium */
-  .catalog-card {
-    background-color:#f5ede5;
-    border:2px solid #6b4e31;
-    border-radius:.75rem;
-    padding:2rem;
-    font-weight:600;
-    text-align:center;
-    transition: all 0.3s ease;
-  }
-  .catalog-card:hover {
-    transform: translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.25);
-  }
+/* Botones premium con colores fuertes */
+.btn-premium {
+  background-color: #b91c1c; /* rojo fuerte */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+.btn-premium:hover {
+  background-color:#f87171;
+  transform: translateY(-3px);
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #16a34a; /* verde fuerte */
+  color: #fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.5);
+  z-index:1000;
+  transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.2);
+  background-color: #4ade80;
+}
+
+/* Cartas de catálogo */
+.catalog-card {
+  background-color:#b91c1c; /* rojo fuerte */
+  border:2px solid #fbbf24; /* dorado */
+  border-radius:.75rem;
+  padding:2rem;
+  font-weight:600;
+  text-align:center;
+  transition: all 0.3s ease, transform 0.5s ease;
+}
+.catalog-card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  section { padding: 2rem 1rem; }
+}
 </style>
 </head>
 <body>
@@ -101,16 +122,16 @@
 </header>
 
 <!-- Hero -->
-<section class="text-center">
+<section class="text-center fade-in">
   <h2>Fabricación de Remolques Premium</h2>
   <p class="mb-6 text-lg max-w-2xl mx-auto">
-    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado. Diseño elegante, resistente y personalizado.
+    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado. Diseño elegante y resistente.
   </p>
   <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-xl shadow-xl">
 </section>
 
 <!-- Catálogo -->
-<section>
+<section class="fade-in">
   <h2>Catálogo de Remolques</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Próximamente todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
   <div class="grid md:grid-cols-3 gap-6">
@@ -123,21 +144,21 @@
 </section>
 
 <!-- Herrería -->
-<section>
+<section class="fade-in">
   <h2>Herrería</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Toldos, rejas, portones, ventanas, puertas y más, fabricados con precisión y diseño profesional.</p>
   <div class="catalog-card">🛠 Proyectos de Herrería Personalizados</div>
 </section>
 
-<!-- Productos en Mercado Libre / Amazon -->
-<section>
+<!-- Productos -->
+<section class="fade-in">
   <h2>Productos en Mercado Libre & Amazon</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Encuentra productos básicos y accesorios listos para envío inmediato.</p>
   <div class="catalog-card">🛒 Accesorios para remolques</div>
 </section>
 
 <!-- Contacto -->
-<section>
+<section class="fade-in">
   <h2>Contacto</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
   <div class="flex flex-col md:flex-row justify-around items-center gap-6">
@@ -163,5 +184,20 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+// Animaciones al hacer scroll
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
+
 </body>
-</html>
+    </html>
