@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remolques MX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-image: url('https://i.ibb.co/p3KhB1B/wood-texture.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      section {
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 1100px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      /* Botón flotante de WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease-in-out;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #1ebe5d;
+      }
+    </style>
+    <!-- Icono de WhatsApp -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-black bg-opacity-70 text-white py-6 shadow-lg">
+      <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+        <h1 class="text-3xl font-bold">Remolques MX</h1>
+        <a
+          href="https://wa.me/523347540496"
+          target="_blank"
+          class="bg-green-500 px-4 py-2 rounded-lg shadow hover:bg-green-600 transition"
+        >
+          Cotiza en WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center">
+      <h2 class="text-4xl font-bold mb-4">Fabricación de Remolques Premium</h2>
+      <p class="mb-6 text-lg">
+        Remolques hechos a medida, con acabados en madera tratada y estructura
+        de acero reforzado.
+      </p>
+      <img
+        src="https://i.ibb.co/Zm5B2L6/remolque.png"
+        alt="Remolque MX"
+        class="mx-auto rounded-xl shadow-lg"
+      />
+    </section>
+
+    <!-- Catálogo -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4 text-center">Catálogo de Remolques</h2>
+      <p class="text-center mb-6">
+        Próximamente podrás ver aquí todos nuestros modelos: carga, RZR,
+        ganaderos, food trucks y multiuso.
+      </p>
+      <div
+        class="grid md:grid-cols-3 gap-6 text-center font-semibold text-gray-600"
+      >
+        <div class="border-2 border-dashed p-6 rounded-lg">
+          📦 Espacio para catálogo
+        </div>
+        <div class="border-2 border-dashed p-6 rounded-lg">
+          📦 Espacio para catálogo
+        </div>
+        <div class="border-2 border-dashed p-6 rounded-lg">
+          📦 Espacio para catálogo
+        </div>
+      </div>
+    </section>
+
+    <!-- Herrería -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4 text-center">Herrería</h2>
+      <p class="text-center mb-6">
+        Toldos, rejas, portones, ventanas, puertas y mucho más.
+      </p>
+      <div
+        class="border-2 border-dashed p-6 rounded-lg text-center font-semibold text-gray-600"
+      >
+        🛠 Espacio para mostrar trabajos de herrería
+      </div>
+    </section>
+
+    <!-- Productos base -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4 text-center">
+        Productos en Mercado Libre & Amazon
+      </h2>
+      <p class="text-center mb-6">
+        Aquí podrás encontrar productos básicos y accesorios listos para envío
+        inmediato.
+      </p>
+      <div
+        class="border-2 border-dashed p-6 rounded-lg text-center font-semibold text-gray-600"
+      >
+        🛒 Espacio para productos de e-commerce
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4 text-center">Contacto</h2>
+      <p class="text-center mb-6">
+        Escríbenos para cotizaciones, pedidos o más información.
+      </p>
+      <div class="flex flex-col md:flex-row justify-around items-center gap-6">
+        <a
+          href="https://wa.me/523347540496"
+          target="_blank"
+          class="bg-green-500 px-6 py-3 rounded-xl text-white font-bold shadow hover:bg-green-600 transition"
+        >
+          WhatsApp
+        </a>
+        <p class="text-lg">📞 Tel: +52 33 4754 0496</p>
+        <p class="text-lg">✉️ Email: contacto@remolquesmx.com</p>
+      </div>
+      <div class="mt-8">
+        <iframe
+          class="w-full h-64 rounded-lg shadow-lg"
+          src="https://maps.google.com/maps?q=Guadalajara,%20Jalisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-80 text-white py-6 mt-12">
+      <div class="text-center">
+        © 2025 Remolques MX - Todos los derechos reservados
+      </div>
+    </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a
+      href="https://wa.me/523347540496"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </body>
+</html>
