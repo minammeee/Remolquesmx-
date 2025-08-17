@@ -11,54 +11,56 @@ body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color:#fff;
+  /* Fondo de madera premium con vetas horizontales */
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url('https://images.unsplash.com/photo-1600285121403-0d1de9e6db9d?auto=format&fit=crop&w=1920&q=80') 
-              no-repeat center center fixed;
+              url('https://images.unsplash.com/photo-1581091870622-9f37e330e8b1?auto=format&fit=crop&w=1920&q=80') 
+              repeat-x center center fixed;
   background-size: cover;
 }
 
 header {
-  background: rgba(44,31,31,0.8);
-  backdrop-blur: 8px;
+  background: rgba(44,31,31,0.85);
+  backdrop-blur: 6px;
   padding: 2rem 1rem;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 header img {
-  height: 100px; /* Logo grande */
+  height: 120px; /* Logo grande */
   width: auto;
   margin-bottom: 1rem;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin: 0;
   color: #d4af37;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
 }
 
 section {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.65);
   border-radius: 1rem;
   padding: 3rem 2rem;
   margin: 3rem auto;
   max-width: 1100px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 section:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.7);
 }
 
 h2 {
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   text-align:center;
   margin-bottom:1rem;
   color:#d4af37;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
 .btn-premium {
@@ -68,7 +70,7 @@ h2 {
   border-radius:0.75rem;
   font-weight:700;
   text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
 }
 .btn-premium:hover {
@@ -84,11 +86,11 @@ h2 {
   text-align:center;
   transition: all 0.4s ease, transform 0.5s ease;
   color:#fff;
-  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  box-shadow:0 6px 25px rgba(0,0,0,0.5);
 }
 .catalog-card:hover {
   transform: scale(1.08) translateY(-10px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.7);
+  box-shadow:0 18px 35px rgba(0,0,0,0.7);
 }
 
 .fade-in {
@@ -103,8 +105,8 @@ h2 {
 
 @media(max-width:768px){
   section { padding: 2rem 1rem; }
-  header h1 { font-size: 2rem; }
-  header img { height: 80px; }
+  header h1 { font-size: 2.2rem; }
+  header img { height: 100px; }
 }
 </style>
 </head>
@@ -117,12 +119,17 @@ h2 {
 </header>
 
 <!-- Hero -->
-<section class="text-center fade-in">
+<section class="text-center fade-in relative">
   <h2>Fabricación de Remolques Premium</h2>
   <p class="mb-6 text-lg max-w-2xl mx-auto">
     Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado.
   </p>
-  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl">
+  <div class="relative inline-block">
+    <!-- Botón WhatsApp funcional pero invisible -->
+    <a href="https://wa.me/523347540496" target="_blank" class="absolute inset-0 z-10"></a>
+    <!-- Imagen del logo/remolque -->
+    <img src="https://i.imgur.com/QkFyGMz.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl relative z-20">
+  </div>
 </section>
 
 <!-- Catálogo General -->
@@ -143,7 +150,12 @@ h2 {
 <section class="fade-in">
   <h2>Productos en Mercado Libre & Amazon</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Productos listos para envío inmediato.</p>
-  <div class="catalog-card">🛒 Productos Prefabricados</div>
+  <div class="catalog-card relative inline-block">
+    <!-- Botón WhatsApp funcional pero invisible -->
+    <a href="https://wa.me/523347540496" target="_blank" class="absolute inset-0 z-10"></a>
+    <!-- Imagen del logo/remolque -->
+    <img src="https://i.imgur.com/QkFyGMz.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl relative z-20">
+  </div>
 </section>
 
 <!-- Contacto -->
@@ -163,7 +175,7 @@ h2 {
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#2c1f1f]/80 text-white py-6 mt-12 text-center backdrop-blur-md">
+<footer class="bg-[#2c1f1f]/85 text-white py-6 mt-12 text-center backdrop-blur-md">
   © 2025 Remolques MX - Todos los derechos reservados
 </footer>
 
