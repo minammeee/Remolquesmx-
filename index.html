@@ -8,13 +8,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
+/* Fuente moderna */
 body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg') no-repeat center center fixed;
-  background-size: cover;
   color: #fff;
   overflow-x: hidden;
+  background: url('https://i.ibb.co/1r2yFzX/wood-background-light.jpg') no-repeat center center fixed;
+  background-size: cover;
+  perspective: 1px;
+}
+
+/* Parallax en secciones */
+.parallax {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 /* Animaciones al scroll */
@@ -28,43 +36,44 @@ body {
   transform: translateY(0);
 }
 
-/* Secciones premium con colores fuertes */
+/* Secciones premium con gradiente dorado-rojo */
 section {
-  background: rgba(59, 47, 47, 0.95);
   border-radius: 1rem;
   padding: 3rem 2rem;
   margin: 3rem auto;
   max-width: 1200px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: linear-gradient(135deg, #b91c1c 0%, #fbbf24 100%);
 }
 section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
 }
 
 h2 {
   font-weight: 700;
   font-size: 2.5rem;
-  color: #fbbf24; /* dorado fuerte */
+  color: #fff;
   text-align:center;
   margin-bottom:1rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Botones premium con colores fuertes */
+/* Botones premium con gradiente y 3D hover */
 .btn-premium {
-  background-color: #b91c1c; /* rojo fuerte */
-  color: #fff;
+  background: linear-gradient(45deg,#b91c1c,#fbbf24);
+  color:#fff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
   font-weight:600;
   text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
 }
 .btn-premium:hover {
-  background-color:#f87171;
-  transform: translateY(-3px);
+  background: linear-gradient(45deg,#fbbf24,#b91c1c);
+  transform: translateY(-4px) scale(1.05);
 }
 
 /* Botón flotante WhatsApp */
@@ -74,14 +83,14 @@ h2 {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #16a34a; /* verde fuerte */
+  background-color: #16a34a;
   color: #fff;
   border-radius:50%;
   display:flex;
   justify-content:center;
   align-items:center;
   font-size:28px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.5);
+  box-shadow:0 5px 20px rgba(0,0,0,0.7);
   z-index:1000;
   transition: all 0.3s ease;
 }
@@ -90,19 +99,20 @@ h2 {
   background-color: #4ade80;
 }
 
-/* Cartas de catálogo */
+/* Cartas de catálogo animadas */
 .catalog-card {
-  background-color:#b91c1c; /* rojo fuerte */
-  border:2px solid #fbbf24; /* dorado */
+  background: linear-gradient(45deg,#b91c1c,#fbbf24);
   border-radius:.75rem;
   padding:2rem;
   font-weight:600;
   text-align:center;
-  transition: all 0.3s ease, transform 0.5s ease;
+  transition: all 0.4s ease, transform 0.5s ease;
+  color:#fff;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
 }
 .catalog-card:hover {
-  transform: translateY(-8px);
-  box-shadow:0 12px 25px rgba(0,0,0,0.5);
+  transform: scale(1.08) translateY(-10px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.7);
 }
 
 /* Responsive */
@@ -122,18 +132,18 @@ h2 {
 </header>
 
 <!-- Hero -->
-<section class="text-center fade-in">
+<section class="text-center fade-in parallax">
   <h2>Fabricación de Remolques Premium</h2>
   <p class="mb-6 text-lg max-w-2xl mx-auto">
-    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado. Diseño elegante y resistente.
+    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado. Diseño elegante, resistente y único.
   </p>
-  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-xl shadow-xl">
+  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-xl shadow-2xl">
 </section>
 
 <!-- Catálogo -->
-<section class="fade-in">
+<section class="fade-in parallax">
   <h2>Catálogo de Remolques</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Próximamente todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
+  <p class="text-center mb-6 max-w-xl mx-auto">Todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
   <div class="grid md:grid-cols-3 gap-6">
     <div class="catalog-card">📦 Remolque de Carga</div>
     <div class="catalog-card">🚚 Food Truck</div>
@@ -144,21 +154,21 @@ h2 {
 </section>
 
 <!-- Herrería -->
-<section class="fade-in">
+<section class="fade-in parallax">
   <h2>Herrería</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Toldos, rejas, portones, ventanas, puertas y más, fabricados con precisión y diseño profesional.</p>
+  <p class="text-center mb-6 max-w-xl mx-auto">Toldos, rejas, portones, ventanas, puertas y más, fabricados con precisión y estilo.</p>
   <div class="catalog-card">🛠 Proyectos de Herrería Personalizados</div>
 </section>
 
 <!-- Productos -->
-<section class="fade-in">
+<section class="fade-in parallax">
   <h2>Productos en Mercado Libre & Amazon</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Encuentra productos básicos y accesorios listos para envío inmediato.</p>
+  <p class="text-center mb-6 max-w-xl mx-auto">Accesorios listos para envío inmediato.</p>
   <div class="catalog-card">🛒 Accesorios para remolques</div>
 </section>
 
 <!-- Contacto -->
-<section class="fade-in">
+<section class="fade-in parallax">
   <h2>Contacto</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
   <div class="flex flex-col md:flex-row justify-around items-center gap-6">
@@ -167,7 +177,7 @@ h2 {
     <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
   </div>
   <div class="mt-8">
-    <iframe class="w-full h-64 rounded-xl shadow-xl" 
+    <iframe class="w-full h-64 rounded-xl shadow-2xl" 
       src="https://maps.google.com/maps?q=Guadalajara,%20Jalisco&t=&z=13&ie=UTF8&iwloc=&output=embed" 
       frameborder="0" allowfullscreen>
     </iframe>
@@ -187,17 +197,17 @@ h2 {
 <script>
 // Animaciones al hacer scroll
 const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-}, appearOptions);
-faders.forEach(fader => { appearOnScroll.observe(fader); });
+}, { threshold:0.2 });
+
+faders.forEach(fader => observer.observe(fader));
 </script>
 
 </body>
-    </html>
+</html>
