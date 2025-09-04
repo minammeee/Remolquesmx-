@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remolques MX - Premium</title>
+<title>Remolques MX - Ultra Premium</title>
 <meta name="description" content="Remolques MX - Remolques premium hechos a medida en Guadalajara. Compra en Mercado Libre o Amazon. Contacto por WhatsApp.">
+
+<!-- TailwindCSS y Font Awesome -->
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<link rel="icon" href="https://i.imgur.com/remolque-uSLZ6Dy.png" type="image/png">
+
+<!-- Logos y Favicons -->
+<link rel="icon" href="https://i.imgur.com/QkFyGMz.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://i.imgur.com/QkFyGMz.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://i.imgur.com/QkFyGMz.png">
+
 <style>
+/* Reset y body */
 body {
   margin:0;
   font-family:'Segoe UI',Roboto,sans-serif;
@@ -30,114 +38,63 @@ header {
   align-items:center;
   box-shadow:0 4px 12px rgba(0,0,0,0.5);
 }
-header .logo {
-  display:flex;
-  align-items:center;
-}
-header img {
-  height:50px;
-  margin-right:0.5rem;
-  border-radius:0.5rem;
-  box-shadow:0 4px 12px rgba(0,0,0,0.5);
-}
-header h1 {
-  font-size:2rem;
-  font-weight:800;
-  color:#d4af37;
-  text-shadow:2px 2px 6px rgba(0,0,0,0.7);
-}
-.btn-primary {
-  background: linear-gradient(135deg,#d4af37,#b8860b);
-  color:#000;
-  padding:0.75rem 1.5rem;
-  border-radius:0.5rem;
-  font-weight:700;
-  text-decoration:none;
-  transition:all 0.3s;
-}
+header .logo { display:flex; align-items:center; }
+header img { height:60px; margin-right:0.5rem; border-radius:0.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+header h1 { font-size:2rem; font-weight:800; color:#d4af37; text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
+.btn-primary { background: linear-gradient(135deg,#d4af37,#b8860b); color:#000; padding:0.75rem 1.5rem; border-radius:0.5rem; font-weight:700; text-decoration:none; transition:all 0.3s;}
 .btn-primary:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.5); }
 
-/* Hero parallax */
-.hero {
-  position: relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:80vh;
-  color:#fff;
-  text-shadow:2px 2px 10px rgba(0,0,0,0.7);
-  overflow:hidden;
-}
-.hero-overlay {
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.6);
-  z-index:0;
-}
-.hero-content {
-  position:relative; z-index:1;
-  text-align:center; max-width:800px;
-  padding:2rem;
-  animation: fadeInUp 1.5s ease forwards;
-  opacity:0;
-}
-@keyframes fadeInUp {
-  to { opacity:1; transform:translateY(0); }
-  from { opacity:0; transform:translateY(30px); }
-}
-.hero-content h2 { font-size:3rem; font-weight:800; margin-bottom:1rem; color:#d4af37; }
-.hero-content p { font-size:1.3rem; margin-bottom:1.5rem; }
+/* Hero Ultra Premium */
+.hero { position: relative; height:90vh; display:flex; align-items:center; justify-content:center; overflow:hidden; perspective:1000px; }
+.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://images.unsplash.com/photo-1600488993481-9a4d9e9f6d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat; transform:translateZ(-1px) scale(2); z-index:0; }
+.hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:1; }
+.hero-content { position:relative; z-index:2; text-align:center; max-width:900px; padding:2rem; animation:fadeInUp 1.5s ease forwards; opacity:0;}
+.hero-content h2 { font-size:3.5rem; font-weight:800; margin-bottom:1rem; color:#d4af37; text-shadow:2px 2px 8px rgba(0,0,0,0.8);}
+.hero-content p { font-size:1.3rem; margin-bottom:2rem; }
+.hero-content a { font-size:1.1rem; }
 
 /* Secciones */
-section { max-width:1200px; margin:4rem auto; padding:2rem; background: rgba(0,0,0,0.7); border-radius:1rem; box-shadow:0 8px 25px rgba(0,0,0,0.5); transition:transform 0.3s ease; }
+section { max-width:1200px; margin:4rem auto; padding:2rem; background: rgba(0,0,0,0.75); border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.6); transition:transform 0.3s ease; }
 section:hover { transform:translateY(-5px); }
-section h2 { font-size:2.2rem; color:#d4af37; margin-bottom:1rem; text-align:center; text-shadow:2px 2px 6px rgba(0,0,0,0.7); }
-section p { text-align:center; font-size:1.1rem; margin-bottom:2rem; }
+section h2 { font-size:2.5rem; color:#d4af37; margin-bottom:1rem; text-align:center; text-shadow:2px 2px 6px rgba(0,0,0,0.7); }
+section p { text-align:center; font-size:1.2rem; margin-bottom:2rem; }
 
-/* Slider catálogo */
-.catalog-slider {
-  display:flex;
-  overflow-x:auto;
-  gap:2rem;
-  padding-bottom:1rem;
-  scroll-behavior:smooth;
-}
+/* Slider 3D productos */
+.catalog-slider { display:flex; overflow-x:auto; gap:2rem; padding-bottom:1rem; scroll-behavior:smooth; perspective:1000px; }
 .catalog-slider::-webkit-scrollbar { height:8px; }
 .catalog-slider::-webkit-scrollbar-thumb { background:#d4af37; border-radius:4px; }
-.catalog-item {
-  flex:0 0 300px;
-  background:rgba(255,255,255,0.05);
-  border-radius:1rem;
-  padding:1rem;
-  text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.5);
-  transition:transform 0.3s;
-}
-.catalog-item:hover { transform:scale(1.03); }
+.catalog-item { flex:0 0 300px; background:rgba(255,255,255,0.05); border-radius:1rem; padding:1rem; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s; transform-style: preserve-3d;}
+.catalog-item:hover { transform:scale(1.05) rotateY(5deg); box-shadow:0 12px 30px rgba(0,0,0,0.7);}
 .catalog-item img { width:100%; border-radius:0.75rem; margin-bottom:1rem; }
 .catalog-item a { display:block; margin:0.5rem 0; background:#d4af37; color:#000; padding:0.5rem; border-radius:0.5rem; font-weight:700; text-decoration:none; transition:all 0.3s; }
 .catalog-item a:hover { background:#b8860b; }
 
 /* Testimonios */
 .testimonial-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
-.testimonial { background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:1rem; box-shadow:0 6px 20px rgba(0,0,0,0.5); transition:transform 0.3s; }
-.testimonial:hover { transform:translateY(-5px); }
+.testimonial { background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:1rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s; }
+.testimonial:hover { transform:translateY(-5px) scale(1.02); }
 .testimonial p { font-style:italic; margin-bottom:1rem; }
 .testimonial h4 { font-weight:700; color:#d4af37; }
 
 /* Contacto */
 .contact-grid { display:flex; flex-wrap:wrap; justify-content:space-around; gap:2rem; text-align:center; }
-.contact-card { flex:1 1 250px; background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:0.75rem; box-shadow:0 6px 20px rgba(0,0,0,0.5); transition:transform 0.3s; }
+.contact-card { flex:1 1 250px; background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:0.75rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s; }
 .contact-card:hover { transform:translateY(-5px); }
 
 /* Botón flotante WhatsApp */
-.float-btn { position:fixed; bottom:20px; width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:28px; color:#fff; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:all 0.3s; z-index:1000; }
+.float-btn { position:fixed; bottom:20px; width:70px; height:70px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:32px; color:#fff; box-shadow:0 5px 25px rgba(0,0,0,0.6); transition:all 0.3s; z-index:1000; animation:pulse 2s infinite; }
 .float-btn:hover { transform:scale(1.2); }
+@keyframes pulse { 0% { transform:scale(1); } 50% { transform:scale(1.1); } 100% { transform:scale(1); } }
 .whatsapp-float { right:20px; background-color:#16a34a; }
 
 /* Footer */
 footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2rem; margin-top:2rem; }
+
+/* Animación fade-in */
+.fade-in { opacity:0; transform:translateY(30px); transition: all 1s ease-out; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } from { opacity:0; transform:translateY(30px); } }
 </style>
 </head>
 <body>
@@ -145,26 +102,27 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
 <!-- Header -->
 <header>
   <div class="logo">
-    <img src="https://i.imgur.com/remolque-uSLZ6Dy.png" alt="Logo Remolques MX">
+    <img src="https://i.imgur.com/QkFyGMz.png" alt="Logo Remolques MX">
     <h1>Remolques MX</h1>
   </div>
   <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" target="_blank" class="btn-primary">Cotiza en WhatsApp</a>
 </header>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero fade-in">
+  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h2>Remolques Premium Hechos a Medida</h2>
-    <p>Construidos con estructura de acero reforzado y acabados de madera tratada, diseñados para durar y destacar.</p>
-    <a href="Catalago Remolques MX (1).pdf" download class="btn-primary">📑 Descargar Catálogo</a>
+    <h2>Remolques Premium Ultra</h2>
+    <p>Diseñados para destacar, durabilidad máxima y estilo sin comparación.</p>
+    <a href="Catalago_Remolques_MX.pdf" download class="btn-primary">📑 Descargar Catálogo</a>
   </div>
 </section>
 
 <!-- Catálogo Horizontal -->
-<section>
+<section class="fade-in">
   <h2>Productos Prefabricados</h2>
-  <div class="catalog-slider" id="catalog-slider">
+  <div class="catalog-slider">
     <div class="catalog-item">
       <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque Carga">
       <a href="https://www.mercadolibre.com.mx/" target="_blank">Mercado Libre</a>
@@ -184,7 +142,7 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
 </section>
 
 <!-- Testimonios -->
-<section>
+<section class="fade-in">
   <h2>Testimonios de Clientes</h2>
   <div class="testimonial-grid">
     <div class="testimonial">
@@ -203,7 +161,7 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
 </section>
 
 <!-- Contacto -->
-<section>
+<section class="fade-in">
   <h2>Contacto y Ubicación</h2>
   <div class="contact-grid">
     <div class="contact-card">
@@ -219,14 +177,14 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
       <p>Email: contacto@remolquesmx.com</p>
     </div>
     <div class="contact-card">
-      <iframe class="w-full h-48 rounded-lg" src="https://maps.google.com/maps?q=Remolques%20MX,%20Guadalajara&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      <iframe class="w-full h-48 rounded-lg" src="https://maps.google.com/maps?q=Guadalajara,%20Jalisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© 2025 Remolques MX - Todos los derechos reservados</p>
+  © 2025 Remolques MX - Todos los derechos reservados
 </footer>
 
 <!-- Botón flotante WhatsApp -->
@@ -235,7 +193,7 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
 </a>
 
 <script>
-// Fade-in al scroll
+// Animación fade-in al scroll
 const faders = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
