@@ -17,30 +17,31 @@ header h1 { font-size:2rem; font-weight:800; color:#d4af37; text-shadow:2px 2px 
 .btn-primary { background: linear-gradient(135deg,#d4af37,#b8860b); color:#000; padding:0.75rem 1.5rem; border-radius:0.5rem; font-weight:700; text-decoration:none; transition:all 0.3s;}
 .btn-primary:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.5);}
 .hero { position: relative; height:90vh; display:flex; align-items:center; justify-content:center; overflow:hidden; perspective:1000px;}
-.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://i.imgur.com/bslalBj.png') center center/cover no-repeat; transform:translateZ(-1px) scale(2); z-index:0; }
+.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://i.imgur.com/cZsPKYz.png') center center/cover no-repeat; transform:translateZ(-1px) scale(2); z-index:0; transition: transform 0.3s ease; }
 .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:1;}
 .hero-content { position:relative; z-index:2; text-align:center; max-width:900px; padding:2rem; animation:fadeInUp 1.5s ease forwards; opacity:0;}
 .hero-content h2 { font-size:3.5rem; font-weight:800; margin-bottom:1rem; color:#d4af37; text-shadow:2px 2px 8px rgba(0,0,0,0.8);}
 .hero-content p { font-size:1.3rem; margin-bottom:2rem;}
-section { max-width:1200px; margin:4rem auto; padding:2rem; background: rgba(0,0,0,0.75); border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.6); transition:transform 0.3s ease;}
+section { max-width:1200px; margin:4rem auto; padding:2rem; background: rgba(0,0,0,0.5); border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.6); transition:transform 0.3s ease; background-image: url('https://i.imgur.com/cZsPKYz.png'); background-size: cover; background-position: center;}
 section:hover { transform:translateY(-5px);}
 section h2 { font-size:2.5rem; color:#d4af37; margin-bottom:1rem; text-align:center; text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
 section p { text-align:center; font-size:1.2rem; margin-bottom:2rem;}
 .catalog-slider { display:flex; overflow-x:auto; gap:2rem; padding-bottom:1rem; scroll-behavior:smooth; perspective:1000px;}
 .catalog-slider::-webkit-scrollbar { height:8px;}
 .catalog-slider::-webkit-scrollbar-thumb { background:#d4af37; border-radius:4px;}
-.catalog-item { flex:0 0 300px; background:rgba(255,255,255,0.05); border-radius:1rem; padding:1rem; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s; transform-style: preserve-3d; }
+.catalog-item { flex:0 0 300px; background:rgba(0,0,0,0.5); border-radius:1rem; padding:1rem; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s; transform-style: preserve-3d; }
 .catalog-item:hover { transform:scale(1.05) rotateY(5deg); box-shadow:0 12px 30px rgba(0,0,0,0.7);}
 .catalog-item img { width:100%; border-radius:0.75rem; margin-bottom:1rem; }
 .catalog-item a { display:block; margin:0.5rem 0; background:#d4af37; color:#000; padding:0.5rem; border-radius:0.5rem; font-weight:700; text-decoration:none; transition:all 0.3s; }
 .catalog-item a:hover { background:#b8860b; }
+.model-price { font-size:1.2rem; font-weight:700; color:#d4af37; margin-top:0.5rem;}
 .testimonial-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
-.testimonial { background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:1rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s;}
+.testimonial { background: rgba(0,0,0,0.5); padding:1.5rem; border-radius:1rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s;}
 .testimonial:hover { transform:translateY(-5px) scale(1.02);}
 .testimonial p { font-style:italic; margin-bottom:1rem;}
 .testimonial h4 { font-weight:700; color:#d4af37;}
 .contact-grid { display:flex; flex-wrap:wrap; justify-content:space-around; gap:2rem; text-align:center;}
-.contact-card { flex:1 1 250px; background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:0.75rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s;}
+.contact-card { flex:1 1 250px; background:rgba(0,0,0,0.5); padding:1.5rem; border-radius:0.75rem; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:transform 0.3s;}
 .contact-card:hover { transform:translateY(-5px);}
 .float-btn { position:fixed; bottom:20px; width:70px; height:70px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:32px; color:#fff; box-shadow:0 5px 25px rgba(0,0,0,0.6); transition:all 0.3s; z-index:1000; animation:pulse 2s infinite;}
 .float-btn:hover { transform:scale(1.2);}
@@ -76,19 +77,19 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
   <h2>Productos Prefabricados</h2>
   <div class="catalog-slider">
     <div class="catalog-item">
-      <img src="https://i.imgur.com/lbbobaz.png" alt="Toldo para puerta 1">
-      <a href="https://www.mercadolibre.com.mx/" target="_blank">Mercado Libre</a>
-      <a href="https://www.amazon.com.mx/" target="_blank">Amazon</a>
+      <img src="https://i.imgur.com/lbbobaz.png" alt="Toldo Puerta 1">
+      <a href="#">Mercado Libre</a>
+      <a href="#">Amazon</a>
     </div>
     <div class="catalog-item">
-      <img src="https://i.imgur.com/bslalBj.png" alt="Toldo para puerta 2">
-      <a href="https://www.mercadolibre.com.mx/" target="_blank">Mercado Libre</a>
-      <a href="https://www.amazon.com.mx/" target="_blank">Amazon</a>
+      <img src="https://i.imgur.com/bslalBj.png" alt="Toldo Puerta 2">
+      <a href="#">Mercado Libre</a>
+      <a href="#">Amazon</a>
     </div>
-    <div class="catalog-item" style="background:#000;">
-      <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Producto genérico">
-      <a href="https://www.mercadolibre.com.mx/" target="_blank">Mercado Libre</a>
-      <a href="https://www.amazon.com.mx/" target="_blank">Amazon</a>
+    <div class="catalog-item">
+      <img src="https://i.imgur.com/cZsPKYz.png" alt="Producto Genérico">
+      <a href="#">Mercado Libre</a>
+      <a href="#">Amazon</a>
     </div>
   </div>
 </section>
@@ -98,65 +99,42 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
   <div class="catalog-slider">
     <div class="catalog-item">
       <img src="https://i.imgur.com/RYTzCzA.png" alt="Remolque B2">
-      <a href="#">Mercado Libre</a>
-      <a href="#">Amazon</a>
+      <div class="model-price">$24,500</div>
     </div>
     <div class="catalog-item">
       <img src="https://i.imgur.com/0lLTZSw.png" alt="Remolque Cónfort">
-      <a href="#">Mercado Libre</a>
-      <a href="#">Amazon</a>
+      <div class="model-price">$67,500</div>
     </div>
   </div>
 </section>
 
 <section class="fade-in">
   <h2>Testimonios de Clientes</h2>
-  <div class="<div class="testimonial-grid">
-    <div class="testimonial">
-      <p>"Excelente servicio y remolques de gran calidad. Totalmente recomendados."</p>
-      <h4>Juan P.</h4>
-    </div>
-    <div class="testimonial">
-      <p>"Compré mi remolque prefabricado y llegó en perfectas condiciones, muy profesional."</p>
-      <h4>María L.</h4>
-    </div>
-    <div class="testimonial">
-      <p>"El diseño y la resistencia de los remolques MX es insuperable, muy satisfecho."</p>
-      <h4>Carlos R.</h4>
-    </div>
+  <div class="testimonial-grid">
+    <div class="testimonial"><p>"Excelenteservicio y remolques de gran calidad. Totalmente recomendados."</p><h4>Juan P.</h4></div>
+    <div class="testimonial"><p>"Compré mi remolque prefabricado y llegó en perfectas condiciones, muy profesional."</p><h4>María L.</h4></div>
+    <div class="testimonial"><p>"El diseño y la resistencia de los remolques MX es insuperable, muy satisfecho."</p><h4>Carlos R.</h4></div>
   </div>
 </section>
 
 <section class="fade-in">
   <h2>Contacto y Ubicación</h2>
   <div class="contact-grid">
-    <div class="contact-card">
-      <i class="fab fa-whatsapp fa-2x mb-2"></i>
-      <p>WhatsApp: <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" target="_blank">+52 33 4754 0496</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-phone fa-2x mb-2"></i>
-      <p>Tel: +52 33 4754 0496</p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-envelope fa-2x mb-2"></i>
-      <p>Email: contacto@remolquesmx.com</p>
-    </div>
+    <div class="contact-card"><i class="fab fa-whatsapp fa-2x mb-2"></i><p>WhatsApp: <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" target="_blank">+52 33 4754 0496</a></p></div>
+    <div class="contact-card"><i class="fas fa-phone fa-2x mb-2"></i><p>Tel: +52 33 4754 0496</p></div>
+    <div class="contact-card"><i class="fas fa-envelope fa-2x mb-2"></i><p>Email: contacto@remolquesmx.com</p></div>
     <div class="contact-card">
       <iframe class="w-full h-48 rounded-lg" src="https://www.google.com/maps?q=Cam.+a+San+Isidro+1900,+45645+San+Isidro+Mazatepec,+Jal.&output=embed" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
-<footer>
-  © 2025 Remolques MX - Todos los derechos reservados
-</footer>
+<footer>© 2025 Remolques MX - Todos los derechos reservados</footer>
 
 <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" class="float-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="https://www.facebook.com/RemolquesMX" class="float-btn facebook-float" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
 <script>
-// Animación fade-in al scroll
 const faders = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -168,7 +146,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold:0.2 });
 faders.forEach(fader => observer.observe(fader));
 
-// Efectos hero y sliders
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   document.querySelector('.hero-bg').style.transform = `translateY(${scrolled * 0.3}px) scale(2)`;
