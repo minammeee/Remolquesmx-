@@ -4,93 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Remolques MX - Premium</title>
-<link rel="icon" href="https://i.imgur.com/QkFyGMz.png" type="image/png">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <style>
+/* Fondo con overlay oscuro */
 body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color:#fff;
-  /* Fondo ébano ultra oscuro */
-  background: url('https://png.pngtree.com/background/20230412/original/pngtree-dark-wood-texture-background-picture-image_2394846.jpg') center/cover no-repeat fixed;
-}
-
-/* Header */
-header {
-  background: rgba(15,15,15,0.9);
-  backdrop-blur: 6px;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-}
-header img {
-  height: 120px;
-  width: auto;
-  margin-bottom: 1rem;
-}
-header h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0;
-  color: #d4af37;
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.95);
+  background: linear-gradient(rgba(25,15,5,0.75), rgba(15,10,5,0.75)), 
+              url('https://share.google/images/N3jIQ4J0fR7hk65x3') 
+              no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* Secciones */
 section {
-  background: rgba(10,10,10,0.8);
+  background: rgba(0,0,0,0.7);
   border-radius: 1rem;
   padding: 3rem 2rem;
   margin: 3rem auto;
   max-width: 1100px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.7);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 section:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.85);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
 }
 
+/* Titulos */
 h2 {
   font-weight: 800;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   text-align:center;
   margin-bottom:1rem;
   color:#d4af37;
-  text-shadow: 2px 2px 10px rgba(0,0,0,1);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
+/* Botones premium */
 .btn-premium {
-  background: linear-gradient(135deg,#1a1a1a,#3a3a3a);
+  background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
   color:#fff;
   padding:0.75rem 1.5rem;
   border-radius:0.75rem;
   font-weight:700;
   text-decoration:none;
-  box-shadow:0 6px 20px rgba(0,0,0,0.7);
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
 }
 .btn-premium:hover {
-  background: linear-gradient(135deg,#3a3a3a,#1a1a1a);
+  background: linear-gradient(135deg,#5c4a3c,#3b2f2f);
   transform: translateY(-4px) scale(1.05);
 }
 
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #16a34a;
+  color: #fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.7);
+  z-index:1000;
+  transition: all 0.3s ease;
+}
+.whatsapp-float:hover { transform: scale(1.2); }
+
+/* Cartas de catálogo */
 .catalog-card {
-  background: linear-gradient(135deg,#111,#333);
+  background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
   border-radius:.75rem;
   padding:2rem;
   font-weight:700;
   text-align:center;
   transition: all 0.4s ease, transform 0.5s ease;
   color:#fff;
-  box-shadow:0 6px 25px rgba(0,0,0,0.7);
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
 }
 .catalog-card:hover {
   transform: scale(1.08) translateY(-10px);
-  box-shadow:0 18px 35px rgba(0,0,0,0.85);
+  box-shadow:0 15px 30px rgba(0,0,0,0.7);
 }
 
+/* Animación fade-in */
 .fade-in {
   opacity:0;
   transform: translateY(30px);
@@ -101,62 +106,57 @@ h2 {
   transform: translateY(0);
 }
 
-/* Botones flotantes */
-.whatsapp-float, .facebook-float {
-  position: fixed;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
-  color: #fff;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.85);
-  z-index:1000;
-  transition: all 0.3s ease;
-}
-.whatsapp-float { right: 20px; background-color: #16a34a; }
-.facebook-float { right: 90px; background-color: #1877F2; }
-.whatsapp-float:hover, .facebook-float:hover { transform: scale(1.2); }
-
+/* Responsive */
 @media(max-width:768px){
   section { padding: 2rem 1rem; }
-  header h1 { font-size: 2.2rem; }
-  header img { height: 100px; }
 }
 </style>
 </head>
 <body>
 
 <!-- Header -->
-<header>
-  <img src="https://i.imgur.com/QkFyGMz.png" alt="Remolques MX Logo">
-  <h1>Remolques MX</h1>
+<header class="bg-[#2c1f1f] text-white py-6 shadow-lg">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+    <h1 class="text-3xl font-bold mb-3 md:mb-0">Remolques MX</h1>
+    <a href="https://wa.me/523347540496" target="_blank" class="btn-premium">Cotiza en WhatsApp</a>
+  </div>
 </header>
 
 <!-- Hero -->
-<section class="text-center fade-in relative">
+<section class="text-center fade-in">
   <h2>Fabricación de Remolques Premium</h2>
   <p class="mb-6 text-lg max-w-2xl mx-auto">
     Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado.
   </p>
-  <div class="relative inline-block">
-    <a href="https://wa.me/523347540496" target="_blank" class="absolute inset-0 z-10"></a>
-    <img src="https://i.imgur.com/QkFyGMz.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl relative z-20">
-  </div>
+  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl">
 </section>
 
-<!-- Catálogo General -->
-<section class="fade-in text-center">
-  <h2>Catálogo General</h2>
-  <p class="mb-6 text-lg max-w-xl mx-auto">Consulta todos nuestros modelos y productos prefabricados en un solo lugar.</p>
-  <a href="https://docs.google.com/document/d/1Yf0TRv08c-ODjk5Sghi_abbhvwv9fFWFV_STx8ebjyA/mobilebasic" 
-     target="_blank" 
-     class="btn-premium px-8 py-4">
-     Catálogo General
-  </a>
+<!-- Catálogo -->
+<section class="fade-in">
+  <h2>Catálogo de Remolques</h2>
+  <p class="text-center mb-6 max-w-xl mx-auto">Todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="catalog-card">📦 Remolque de Carga</div>
+    <div class="catalog-card">🚚 Food Truck</div>
+    <div class="catalog-card">⚡ Remolque Multiuso</div>
+    <div class="catalog-card">🐄 Remolque Ganadero</div>
+    <div class="catalog-card">🏎 RZR / Off-Road</div>
+  </div>
+
+  <!-- Botón para ver/descargar el catálogo en PDF -->
+  <div class="text-center mt-10">
+    <a href="Catalago Remolques MX (1).pdf" target="_blank" class="btn-premium">
+      📑 Ver Catálogo Completo en PDF
+    </a>
+  </div>
+
+  <!-- Visor embebido con Google Docs -->
+  <div class="mt-10">
+    <iframe src="https://docs.google.com/gview?url=https://TU_DOMINIO/Catalago%20Remolques%20MX%20(1).pdf&embedded=true"
+            class="w-full h-[600px] rounded-2xl shadow-2xl"
+            frameborder="0">
+    </iframe>
+  </div>
 </section>
 
 <!-- Herrería -->
@@ -169,12 +169,8 @@ h2 {
 <!-- Productos -->
 <section class="fade-in">
   <h2>Productos en Mercado Libre & Amazon</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Productos listos para envío inmediato.</p>
-  <div class="catalog-card relative inline-block">
-    <a href="https://wa.me/523347540496" target="_blank" class="absolute inset-0 z-10 flex items-center justify-center font-bold text-lg">
-      Consultar Disponibles
-    </a>
-  </div>
+  <p class="text-center mb-6 max-w-xl mx-auto">Accesorios listos para envío inmediato.</p>
+  <div class="catalog-card">🛒 Accesorios para remolques</div>
 </section>
 
 <!-- Contacto -->
@@ -182,6 +178,7 @@ h2 {
   <h2>Contacto</h2>
   <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
   <div class="flex flex-col md:flex-row justify-around items-center gap-6">
+    <a href="https://wa.me/523347540496" target="_blank" class="btn-premium px-6 py-3">WhatsApp</a>
     <p class="text-lg font-semibold">📞 Tel: +52 33 4754 0496</p>
     <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
   </div>
@@ -194,23 +191,13 @@ h2 {
 </section>
 
 <!-- Footer -->
-<footer class="text-white py-8 mt-12 text-center relative overflow-hidden rounded-t-xl">
-  <div style="
-    background: url('https://png.pngtree.com/background/20230412/original/pngtree-dark-wood-texture-background-picture-image_2394846.jpg') center/cover no-repeat;
-    position:absolute; inset:0; z-index:0;
-  "></div>
-  <div style="background: rgba(0,0,0,0.6); position:absolute; inset:0; z-index:1;"></div>
-  <div style="position:relative; z-index:2;">
-    <p class="text-lg font-semibold">© 2025 Remolques MX - Todos los derechos reservados</p>
-  </div>
+<footer class="bg-[#2c1f1f] text-white py-6 mt-12 text-center">
+  © 2025 Remolques MX - Todos los derechos reservados
 </footer>
 
-<!-- Botones flotantes -->
+<!-- Botón flotante WhatsApp -->
 <a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
-</a>
-<a href="https://www.facebook.com/share/1GmuRthMFn/" class="facebook-float" target="_blank">
-  <i class="fab fa-facebook-f"></i>
 </a>
 
 <script>
@@ -228,4 +215,4 @@ faders.forEach(fader => observer.observe(fader));
 </script>
 
 </body>
-      </html>
+</html>
