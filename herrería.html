@@ -1,208 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Herrería MX - Pedidos Personalizados</title>
-<meta name="description" content="Herrería MX - Pedidos de toldos, puertas y ventanales personalizados. Cotiza fácil vía WhatsApp.">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<link rel="icon" href="https://i.imgur.com/QkFyGMz.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herrería MX - Personalizada</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: url('https://i.imgur.com/cZsPKYz.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+    header .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background: #b8860b;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-left: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #daa520;
+    }
+    .section {
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.7);
+      margin: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+    }
+    button {
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #daa520;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const telefono = document.getElementById("telefono").value;
+      const colonia = document.getElementById("colonia").value;
+      const tipo = document.getElementById("tipo").value;
+      const metros = document.getElementById("metros").value;
+      const presupuesto = document.getElementById("presupuesto").value;
+      const detalles = document.getElementById("detalles").value;
 
-<style>
-body {
-  margin:0; font-family:'Segoe UI',Roboto,sans-serif;
-  background: url('https://i.imgur.com/cZsPKYz.png') center center/cover fixed;
-  color:#fff; scroll-behavior:smooth;
-}
-header {
-  background: rgba(0,0,0,0.85); position: sticky; top:0; z-index:1000;
-  padding:1rem 2rem; display:flex; align-items:center; box-shadow:0 4px 12px rgba(0,0,0,0.5);
-}
-header .logo { display:flex; align-items:center; }
-header img { height:60px; margin-right:0.5rem; border-radius:0.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.5);}
-header h1 { font-size:2rem; font-weight:800; color:#d4af37; text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
-.hero {
-  height:70vh; display:flex; align-items:center; justify-content:center; text-align:center;
-  background: rgba(0,0,0,0.6); margin-bottom:2rem;
-}
-.hero h2 { font-size:3rem; font-weight:800; color:#d4af37; text-shadow:2px 2px 8px rgba(0,0,0,0.8);}
-.hero p { font-size:1.3rem; margin-top:1rem;}
-form {
-  max-width:700px; margin:0 auto 4rem auto; background: rgba(0,0,0,0.75); padding:2rem;
-  border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.6);
-}
-.form-step { display:none; }
-.form-step.active { display:block; }
-label { display:block; margin:1rem 0 0.5rem; font-weight:600; color:#d4af37; }
-input, select, textarea {
-  width:100%; padding:0.75rem; border-radius:0.5rem; border:none; margin-bottom:1rem; color:#000;
-}
-.btn-primary {
-  background: linear-gradient(135deg,#d4af37,#b8860b); color:#000; padding:0.75rem 1.5rem;
-  border-radius:0.5rem; font-weight:700; transition:all 0.3s; display:inline-block;
-  margin-top:1.5rem; text-align:center; font-size:1.1rem;
-}
-.btn-primary:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.5);}
-.nav-btn { margin-top:1rem; cursor:pointer; display:inline-block; color:#d4af37; font-weight:700; text-decoration:underline;}
-.float-btn {
-  position:fixed; bottom:20px; width:70px; height:70px; border-radius:50%;
-  display:flex; justify-content:center; align-items:center; font-size:32px;
-  color:#fff; box-shadow:0 5px 25px rgba(0,0,0,0.6); transition:all 0.3s; z-index:1000; animation:pulse 2s infinite;
-}
-.float-btn:hover { transform:scale(1.2); }
-.whatsapp-float { right:20px; background-color:#16a34a; }
-.facebook-float { right:100px; background-color:#1877F2; }
-footer { text-align:center; padding:2rem; background: rgba(0,0,0,0.85); color:#fff; margin-top:2rem;}
-@keyframes pulse { 0% { transform:scale(1); } 50% { transform:scale(1.1); } 100% { transform:scale(1); } }
-</style>
+      let mensaje = `👷 *Nueva Solicitud de Herrería* 👷
+📌 Nombre: ${nombre}
+📞 Teléfono: ${telefono}
+📍 Colonia: ${colonia}
+🛠️ Tipo de proyecto: ${tipo}`;
+
+      if(tipo === "Toldo") {
+        mensaje += `\n📏 Metros a cubrir: ${metros}`;
+      }
+
+      mensaje += `\n💰 Presupuesto: ${presupuesto}
+📝 Detalles: ${detalles}`;
+
+      const url = `https://wa.me/5213312345678?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+
+    function mostrarMetros() {
+      const tipo = document.getElementById("tipo").value;
+      const metrosField = document.getElementById("metros-field");
+      if (tipo === "Toldo") {
+        metrosField.style.display = "block";
+      } else {
+        metrosField.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
-
-<header>
-  <div class="logo">
-    <img src="https://i.imgur.com/QkFyGMz.png" alt="Logo Herrería MX">
-    <h1>Herrería MX</h1>
-  </div>
-</header>
-
-<section class="hero">
-  <div>
-    <h2>Tu Herrería Personalizada</h2>
-    <p>Responde la encuesta para obtener tu cotización rápida vía WhatsApp</p>
-  </div>
-</section>
-
-<form id="herreriaForm">
-  <!-- Paso 1 -->
-  <div class="form-step active">
-    <label for="tipo">Tipo de trabajo:</label>
-    <select id="tipo" onchange="mostrarMetros()" required>
-      <option value="">Selecciona...</option>
-      <option value="Toldo">Toldo</option>
-      <option value="Puerta">Puerta</option>
-      <option value="Ventanal">Ventanal</option>
-      <option value="Otro">Otro</option>
-    </select>
-    <span class="nav-btn" onclick="nextStep()">Siguiente ➡️</span>
-  </div>
-
-  <!-- Paso 2 -->
-  <div class="form-step">
-    <div id="metrosDiv" style="display:none;">
-      <label for="metros">Metros a cubrir (solo para toldo):</label>
-      <input type="text" id="metros" placeholder="Ej. 6 m²">
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="https://i.imgur.com/QkFyGMz.png" alt="Logo Remolques MX">
+      <h1>Herrería MX</h1>
     </div>
-    <label for="medidas">Medidas aproximadas:</label>
-    <input type="text" id="medidas" placeholder="Ej. 2m x 3m" required>
-    <span class="nav-btn" onclick="prevStep()">⬅️ Anterior</span>
-    <span class="nav-btn" onclick="nextStep()">Siguiente ➡️</span>
-  </div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="herreria.html">🔨 Herrería</a>
+    </nav>
+  </header>
 
-  <!-- Paso 3 -->
-  <div class="form-step">
-    <label for="material">Material preferido:</label>
-    <select id="material" required>
-      <option value="">Selecciona...</option>
-      <option value="Acero">Acero</option>
-      <option value="Aluminio">Aluminio</option>
-      <option value="Hierro">Hierro</option>
-      <option value="Otro">Otro</option>
-    </select>
+  <!-- Sección -->
+  <section class="section">
+    <h2>Herrería Personalizada</h2>
+    <p>Cuéntanos tu proyecto de herrería (toldos, puertas, ventanales, estructuras) y te cotizamos.</p>
 
-    <label for="acabado">Color o acabado:</label>
-    <input type="text" id="acabado" placeholder="Ej. Negro mate, plata..." required>
+    <form onsubmit="enviarWhatsApp(event)">
+      <label for="nombre">👤 Nombre completo</label>
+      <input type="text" id="nombre" required>
 
-    <span class="nav-btn" onclick="prevStep()">⬅️ Anterior</span>
-    <span class="nav-btn" onclick="nextStep()">Siguiente ➡️</span>
-  </div>
+      <label for="telefono">📞 Teléfono</label>
+      <input type="tel" id="telefono" required>
 
-  <!-- Paso 4 -->
-  <div class="form-step">
-    <label for="presupuesto">Presupuesto aproximado:</label>
-    <input type="text" id="presupuesto" placeholder="Ej. $5,000 - $10,000" required>
+      <label for="colonia">📍 Colonia (Zona Metropolitana)</label>
+      <input type="text" id="colonia" required>
 
-    <label for="colonia">Colonia / Zona:</label>
-    <input type="text" id="colonia" placeholder="Ej. Zapopan, Tlaquepaque..." required>
+      <label for="tipo">🛠️ Tipo de proyecto</label>
+      <select id="tipo" onchange="mostrarMetros()" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Toldo">Toldo</option>
+        <option value="Puerta">Puerta</option>
+        <option value="Ventanales">Ventanales</option>
+        <option value="Otro">Otro</option>
+      </select>
 
-    <span class="nav-btn" onclick="prevStep()">⬅️ Anterior</span>
-    <span class="nav-btn" onclick="nextStep()">Siguiente ➡️</span>
-  </div>
+      <div id="metros-field" style="display:none;">
+        <label for="metros">📏 Metros a cubrir</label>
+        <input type="number" id="metros" min="1">
+      </div>
 
-  <!-- Paso 5 -->
-  <div class="form-step">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <label for="presupuesto">💰 Presupuesto aproximado</label>
+      <input type="text" id="presupuesto" placeholder="Ej. $15,000">
 
-    <label for="whatsapp">WhatsApp:</label>
-    <input type="text" id="whatsapp" placeholder="Ej. +52 33 1234 5678" required>
+      <label for="detalles">📝 Detalles adicionales</label>
+      <textarea id="detalles" rows="4"></textarea>
 
-    <label for="comentarios">Comentarios adicionales:</label>
-    <textarea id="comentarios" rows="4" placeholder="Opcional"></textarea>
+      <button type="submit">📲 Enviar a WhatsApp</button>
+    </form>
+  </section>
 
-    <span class="nav-btn" onclick="prevStep()">⬅️ Anterior</span>
-    <a href="#" class="btn-primary" onclick="enviarWhatsApp()">📩 Enviar solicitud</a>
-  </div>
-</form>
-
-<footer>
-  © 2025 Herrería MX - Todos los derechos reservados
-</footer>
-
-<a href="https://wa.me/523347540496" class="float-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.facebook.com/RemolquesMX" class="float-btn facebook-float" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
-<script>
-let currentStep = 0;
-const steps = document.querySelectorAll('.form-step');
-
-function showStep(n){
-  steps.forEach((step,i)=> step.classList.remove('active'));
-  steps[n].classList.add('active');
-}
-function nextStep(){
-  if(currentStep < steps.length-1) { currentStep++; showStep(currentStep); }
-}
-function prevStep(){
-  if(currentStep > 0){ currentStep--; showStep(currentStep); }
-}
-function mostrarMetros(){
-  const tipo = document.getElementById('tipo').value;
-  document.getElementById('metrosDiv').style.display = (tipo==="Toldo")?'block':'none';
-}
-function enviarWhatsApp(){
-  const tipo = document.getElementById('tipo').value;
-  const metros = document.getElementById('metros').value;
-  const medidas = document.getElementById('medidas').value;
-  const material = document.getElementById('material').value;
-  const acabado = document.getElementById('acabado').value;
-  const presupuesto = document.getElementById('presupuesto').value;
-  const colonia = document.getElementById('colonia').value;
-  const nombre = document.getElementById('nombre').value;
-  const whatsapp = document.getElementById('whatsapp').value;
-  const comentarios = document.getElementById('comentarios').value;
-
-  if(!tipo || !medidas || !material || !acabado || !presupuesto || !colonia || !nombre || !whatsapp){
-    alert("Por favor completa todos los campos obligatorios");
-    return;
-  }
-
-  let mensaje = `Hola! Tengo un pedido personalizado:%0A`;
-  mensaje += `Tipo de trabajo: ${tipo}%0A`;
-  if(tipo==="Toldo") mensaje += `Metros a cubrir: ${metros}%0A`;
-  mensaje += `Medidas: ${medidas}%0A`;
-  mensaje += `Material: ${material}%0A`;
-  mensaje += `Acabado: ${acabado}%0A`;
-  mensaje += `Presupuesto: ${presupuesto}%0A`;
-  mensaje += `Colonia/Zona: ${colonia}%0A`;
-  mensaje += `Nombre: ${nombre}%0A`;
-  mensaje += `WhatsApp: ${whatsapp}%0A`;
-  mensaje += `Comentarios: ${comentarios}`;
-
-  const url = `https://wa.me/523347540496?text=${mensaje}`;
-  window.open(url,'_blank');
-}
-</script>
-
+  <footer>
+    <p>&copy; 2025 Herrería MX | Todos los derechos reservados</p>
+  </footer>
 </body>
-    </html>
+</html>
