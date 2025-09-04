@@ -43,7 +43,7 @@ h2 {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-/* Botones premium */
+/* Botón premium */
 .btn-premium {
   background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
   color:#fff;
@@ -53,6 +53,8 @@ h2 {
   text-decoration:none;
   box-shadow:0 6px 18px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
+  margin: 0.5rem;
+  display: inline-block;
 }
 .btn-premium:hover {
   background: linear-gradient(135deg,#5c4a3c,#3b2f2f);
@@ -143,19 +145,15 @@ h2 {
     <div class="catalog-card">🏎 RZR / Off-Road</div>
   </div>
 
-  <!-- Botón para ver/descargar el catálogo en PDF -->
+  <!-- Botones de catálogo -->
   <div class="text-center mt-10">
-    <a href="Catalago Remolques MX (1).pdf" target="_blank" class="btn-premium">
-      📑 Ver Catálogo Completo en PDF
+    <a href="https://docs.google.com/gview?url=https://TU_DOMINIO/Catalago%20Remolques%20MX%20(1).pdf&embedded=true" 
+       target="_blank" class="btn-premium">
+      👁️ Ver Catálogo en Línea
     </a>
-  </div>
-
-  <!-- Visor embebido con Google Docs -->
-  <div class="mt-10">
-    <iframe src="https://docs.google.com/gview?url=https://TU_DOMINIO/Catalago%20Remolques%20MX%20(1).pdf&embedded=true"
-            class="w-full h-[600px] rounded-2xl shadow-2xl"
-            frameborder="0">
-    </iframe>
+    <a href="Catalago Remolques MX (1).pdf" download class="btn-premium">
+      📑 Descargar PDF
+    </a>
   </div>
 </section>
 
