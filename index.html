@@ -1,183 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remolques MX - Premium</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<style>
-/* Fondo con overlay oscuro y madera */
-body {
-  margin:0;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  color:#fff;
-  background: linear-gradient(rgba(25,15,5,0.75), rgba(15,10,5,0.75)), 
-              url('https://images.unsplash.com/photo-1600488993481-9a4d9e9f6d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') 
-              no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* Secciones */
-section {
-  background: rgba(0,0,0,0.7);
-  border-radius: 1rem;
-  padding: 3rem 2rem;
-  margin: 3rem auto;
-  max-width: 1100px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-section:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
-}
-
-/* Titulos */
-h2 {
-  font-weight: 800;
-  font-size: 2.5rem;
-  text-align:center;
-  margin-bottom:1rem;
-  color:#d4af37; /* dorado elegante */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-/* Botón premium */
-.btn-premium {
-  background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
-  color:#fff;
-  padding:0.75rem 1.5rem;
-  border-radius:0.75rem;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,0.5);
-  transition: all 0.3s ease;
-}
-.btn-premium:hover {
-  background: linear-gradient(135deg,#5c4a3c,#3b2f2f);
-  transform: translateY(-4px) scale(1.05);
-}
-
-/* Botones flotantes */
-.float-btn {
-  position: fixed;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-  color: #fff;
-  box-shadow:0 5px 20px rgba(0,0,0,0.7);
-  z-index:1000;
-  transition: all 0.3s ease;
-}
-.float-btn:hover { transform: scale(1.2); }
-
-.whatsapp-float {
-  right: 20px;
-  background-color: #16a34a;
-}
-.facebook-float {
-  right: 90px;
-  background-color: #1877F2;
-}
-
-/* Animación fade-in */
-.fade-in {
-  opacity:0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
-}
-.fade-in.visible {
-  opacity:1;
-  transform: translateY(0);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  section { padding: 2rem 1rem; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remolques MX - Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Estilos personalizados */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    section {
+      padding: 40px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .btn-premium {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn-premium:hover {
+      background-color: #0056b3;
+    }
+    .product-img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="bg-[#2c1f1f] text-white py-6 shadow-lg">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-    <h1 class="text-3xl font-bold mb-3 md:mb-0">Remolques MX</h1>
+  <!-- Header -->
+  <header>
+    <h1>Remolques MX</h1>
+    <p>Fabricación de remolques premium a medida</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section>
+    <h2>Bienvenido a Remolques MX</h2>
+    <p>Ofrecemos remolques personalizados con acabados de alta calidad y estructuras resistentes.</p>
+    <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="product-img">
+  </section>
+
+  <!-- Catálogo Section -->
+  <section>
+    <h2>Catálogo de Remolques</h2>
+    <p>Descarga nuestro catálogo completo con precios y modelos actualizados.</p>
+    <a href="Catalago Remolques MX (1).pdf" download class="btn-premium">📑 Descargar Catálogo</a>
+  </section>
+
+  <!-- Contacto Section -->
+  <section>
+    <h2>Contacto</h2>
+    <p>Para cotizaciones, pedidos o más información, contáctanos:</p>
+    <p>📞 Tel: +52 33 4754 0496</p>
+    <p>✉️ Email: contacto@remolquesmx.com</p>
     <a href="https://wa.me/523347540496" target="_blank" class="btn-premium">Cotiza en WhatsApp</a>
-  </div>
-</header>
+  </section>
 
-<!-- Hero -->
-<section class="text-center fade-in">
-  <h2>Fabricación de Remolques Premium</h2>
-  <p class="mb-6 text-lg max-w-2xl mx-auto">
-    Remolques hechos a medida, con acabados de madera tratada y estructura de acero reforzado.
-  </p>
-  <img src="https://i.ibb.co/Zm5B2L6/remolque.png" alt="Remolque MX" class="mx-auto rounded-2xl shadow-2xl">
-</section>
-
-<!-- Catálogo -->
-<section class="fade-in">
-  <h2>Catálogo de Remolques</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Descarga nuestro catálogo completo en PDF con precios y modelos actualizados.</p>
-  <div class="text-center mt-10">
-    <a href="Catalago Remolques MX (1).pdf" download class="btn-premium">
-      📑 Descargar Catálogo en PDF
-    </a>
-  </div>
-</section>
-
-<!-- Contacto -->
-<section class="fade-in">
-  <h2>Contacto</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Cotizaciones, pedidos o más información</p>
-  <div class="flex flex-col md:flex-row justify-around items-center gap-6">
-    <a href="https://wa.me/523347540496" target="_blank" class="btn-premium px-6 py-3">WhatsApp</a>
-    <p class="text-lg font-semibold">📞 Tel: +52 33 4754 0496</p>
-    <p class="text-lg font-semibold">✉️ Email: contacto@remolquesmx.com</p>
-  </div>
-  <div class="mt-8">
-    <iframe class="w-full h-64 rounded-2xl shadow-2xl" 
-      src="https://maps.google.com/maps?q=Guadalajara,%20Jalisco&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-[#2c1f1f] text-white py-6 mt-12 text-center">
-  © 2025 Remolques MX - Todos los derechos reservados
-</footer>
-
-<!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/523347540496" class="float-btn whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Botón flotante Facebook -->
-<a href="https://www.facebook.com/remolquesmx" class="float-btn facebook-float" target="_blank">
-  <i class="fab fa-facebook-f"></i>
-</a>
-
-<script>
-// Animación fade-in al scroll
-const faders = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold:0.2 });
-faders.forEach(fader => observer.observe(fader));
-</script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Remolques MX - Todos los derechos reservados</p>
+  </footer>
 
 </body>
 </html>
