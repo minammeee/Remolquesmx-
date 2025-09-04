@@ -77,17 +77,17 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
   <h2>Productos Prefabricados</h2>
   <div class="catalog-slider">
     <div class="catalog-item">
-      <img src="https://i.imgur.com/lbbobaz.png" alt="Toldo Puerta 1">
+      <img src="https://i.imgur.com/WQlJjCI.png" alt="Toldo Prefabricado 1">
       <a href="#">Mercado Libre</a>
       <a href="#">Amazon</a>
     </div>
     <div class="catalog-item">
-      <img src="https://i.imgur.com/bslalBj.png" alt="Toldo Puerta 2">
+      <img src="https://i.imgur.com/WQlJjCI.png" alt="Toldo Prefabricado 2">
       <a href="#">Mercado Libre</a>
       <a href="#">Amazon</a>
     </div>
     <div class="catalog-item">
-      <img src="https://i.imgur.com/cZsPKYz.png" alt="Producto Genérico">
+      <img src="https://i.imgur.com/WQlJjCI.png" alt="Toldo Prefabricado 3">
       <a href="#">Mercado Libre</a>
       <a href="#">Amazon</a>
     </div>
@@ -110,27 +110,48 @@ footer { background: rgba(0,0,0,0.85); color:#fff; text-align:center; padding:2r
 
 <section class="fade-in">
   <h2>Testimonios de Clientes</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial"><p>"Excelenteservicio y remolques de gran calidad. Totalmente recomendados."</p><h4>Juan P.</h4></div>
-    <div class="testimonial"><p>"Compré mi remolque prefabricado y llegó en perfectas condiciones, muy profesional."</p><h4>María L.</h4></div>
-    <div class="testimonial"><p>"El diseño y la resistencia de los remolques MX es insuperable, muy satisfecho."</p><h4>Carlos R.</h4></div>
+  <div<div class="testimonial-grid">
+    <div class="testimonial">
+      <p>"Excelente servicio y remolques de gran calidad. Totalmente recomendados."</p>
+      <h4>Juan P.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Compré mi remolque prefabricado y llegó en perfectas condiciones, muy profesional."</p>
+      <h4>María L.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"El diseño y la resistencia de los remolques MX es insuperable, muy satisfecho."</p>
+      <h4>Carlos R.</h4>
+    </div>
   </div>
 </section>
 
 <section class="fade-in">
   <h2>Contacto y Ubicación</h2>
   <div class="contact-grid">
-    <div class="contact-card"><i class="fab fa-whatsapp fa-2x mb-2"></i><p>WhatsApp: <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" target="_blank">+52 33 4754 0496</a></p></div>
-    <div class="contact-card"><i class="fas fa-phone fa-2x mb-2"></i><p>Tel: +52 33 4754 0496</p></div>
-    <div class="contact-card"><i class="fas fa-envelope fa-2x mb-2"></i><p>Email: contacto@remolquesmx.com</p></div>
+    <div class="contact-card">
+      <i class="fab fa-whatsapp fa-2x mb-2"></i>
+      <p>WhatsApp: <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" target="_blank">+52 33 4754 0496</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-phone fa-2x mb-2"></i>
+      <p>Tel: +52 33 4754 0496</p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-envelope fa-2x mb-2"></i>
+      <p>Email: contacto@remolquesmx.com</p>
+    </div>
     <div class="contact-card">
       <iframe class="w-full h-48 rounded-lg" src="https://www.google.com/maps?q=Cam.+a+San+Isidro+1900,+45645+San+Isidro+Mazatepec,+Jal.&output=embed" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
-<footer>© 2025 Remolques MX - Todos los derechos reservados</footer>
+<footer>
+  © 2025 Remolques MX - Todos los derechos reservados
+</footer>
 
+<!-- Botones flotantes -->
 <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" class="float-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="https://www.facebook.com/RemolquesMX" class="float-btn facebook-float" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
@@ -149,8 +170,11 @@ faders.forEach(fader => observer.observe(fader));
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   document.querySelector('.hero-bg').style.transform = `translateY(${scrolled * 0.3}px) scale(2)`;
+  document.querySelectorAll('.catalog-item').forEach((item, i) => {
+    item.style.transform = `translateY(${Math.sin(scrolled * 0.002 + i) * 10}px) scale(1.0)`;
+  });
 });
 </script>
 
 </body>
-</html>
+  </html>
