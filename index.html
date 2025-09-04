@@ -7,13 +7,13 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <style>
-/* Fondo con overlay oscuro */
+/* Fondo con overlay oscuro y madera */
 body {
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color:#fff;
   background: linear-gradient(rgba(25,15,5,0.75), rgba(15,10,5,0.75)), 
-              url('https://share.google/images/N3jIQ4J0fR7hk65x3') 
+              url('https://images.unsplash.com/photo-1600488993481-9a4d9e9f6d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') 
               no-repeat center center fixed;
   background-size: cover;
 }
@@ -39,7 +39,7 @@ h2 {
   font-size: 2.5rem;
   text-align:center;
   margin-bottom:1rem;
-  color:#d4af37;
+  color:#d4af37; /* dorado elegante */
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
@@ -53,48 +53,37 @@ h2 {
   text-decoration:none;
   box-shadow:0 6px 18px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
-  margin: 0.5rem;
-  display: inline-block;
 }
 .btn-premium:hover {
   background: linear-gradient(135deg,#5c4a3c,#3b2f2f);
   transform: translateY(-4px) scale(1.05);
 }
 
-/* Botón flotante WhatsApp */
-.whatsapp-float {
+/* Botones flotantes */
+.float-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #16a34a;
-  color: #fff;
   border-radius:50%;
   display:flex;
   justify-content:center;
   align-items:center;
   font-size:30px;
+  color: #fff;
   box-shadow:0 5px 20px rgba(0,0,0,0.7);
   z-index:1000;
   transition: all 0.3s ease;
 }
-.whatsapp-float:hover { transform: scale(1.2); }
+.float-btn:hover { transform: scale(1.2); }
 
-/* Cartas de catálogo */
-.catalog-card {
-  background: linear-gradient(135deg,#3b2f2f,#5c4a3c);
-  border-radius:.75rem;
-  padding:2rem;
-  font-weight:700;
-  text-align:center;
-  transition: all 0.4s ease, transform 0.5s ease;
-  color:#fff;
-  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+.whatsapp-float {
+  right: 20px;
+  background-color: #16a34a;
 }
-.catalog-card:hover {
-  transform: scale(1.08) translateY(-10px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.7);
+.facebook-float {
+  right: 90px;
+  background-color: #1877F2;
 }
 
 /* Animación fade-in */
@@ -136,39 +125,12 @@ h2 {
 <!-- Catálogo -->
 <section class="fade-in">
   <h2>Catálogo de Remolques</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Todos nuestros modelos: carga, RZR, ganaderos, food trucks y multiuso.</p>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="catalog-card">📦 Remolque de Carga</div>
-    <div class="catalog-card">🚚 Food Truck</div>
-    <div class="catalog-card">⚡ Remolque Multiuso</div>
-    <div class="catalog-card">🐄 Remolque Ganadero</div>
-    <div class="catalog-card">🏎 RZR / Off-Road</div>
-  </div>
-
-  <!-- Botones de catálogo -->
+  <p class="text-center mb-6 max-w-xl mx-auto">Descarga nuestro catálogo completo en PDF con precios y modelos actualizados.</p>
   <div class="text-center mt-10">
-    <a href="https://docs.google.com/gview?url=https://TU_DOMINIO/Catalago%20Remolques%20MX%20(1).pdf&embedded=true" 
-       target="_blank" class="btn-premium">
-      👁️ Ver Catálogo en Línea
-    </a>
     <a href="Catalago Remolques MX (1).pdf" download class="btn-premium">
-      📑 Descargar PDF
+      📑 Descargar Catálogo en PDF
     </a>
   </div>
-</section>
-
-<!-- Herrería -->
-<section class="fade-in">
-  <h2>Herrería</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Toldos, rejas, portones, ventanas, puertas y más, fabricados con precisión y estilo.</p>
-  <div class="catalog-card">🛠 Proyectos de Herrería Personalizados</div>
-</section>
-
-<!-- Productos -->
-<section class="fade-in">
-  <h2>Productos en Mercado Libre & Amazon</h2>
-  <p class="text-center mb-6 max-w-xl mx-auto">Accesorios listos para envío inmediato.</p>
-  <div class="catalog-card">🛒 Accesorios para remolques</div>
 </section>
 
 <!-- Contacto -->
@@ -194,8 +156,13 @@ h2 {
 </footer>
 
 <!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/523347540496" class="float-btn whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Botón flotante Facebook -->
+<a href="https://www.facebook.com/remolquesmx" class="float-btn facebook-float" target="_blank">
+  <i class="fab fa-facebook-f"></i>
 </a>
 
 <script>
