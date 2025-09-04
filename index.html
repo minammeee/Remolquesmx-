@@ -3,71 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remolques MX - Ultra Premium</title>
-  <meta name="description" content="Remolques MX - Remolques premium hechos a medida en Guadalajara. Contacto por WhatsApp.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="https://i.imgur.com/QkFyGMz.png" type="image/png">
+  <title>Remolques MX</title>
   <style>
     body {
       margin: 0;
-      font-family:'Segoe UI',Roboto,sans-serif;
+      font-family: Arial, sans-serif;
       color: #fff;
-      background: url('https://i.imgur.com/cZsPKYz.jpg') center center/cover no-repeat fixed;
-      scroll-behavior: smooth;
+      background: url('https://i.imgur.com/cZsPKYz.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
     header {
-      background: rgba(0,0,0,0.85);
-      position: sticky;
-      top:0;
-      z-index:1000;
-      padding:1rem 2rem;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      box-shadow:0 4px 12px rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.7);
     }
     header .logo {
-      display:flex;
-      align-items:center;
+      display: flex;
+      align-items: center;
     }
-    header img { height:60px; margin-right:0.5rem; border-radius:0.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.5);}
-    header h1 { font-size:2rem; font-weight:800; color:#d4af37; text-shadow:2px 2px 6px rgba(0,0,0,0.7); }
+    header .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
     nav a {
       text-decoration: none;
       color: #fff;
-      margin-left: 15px;
-      font-weight: 700;
-      transition: all 0.3s;
+      background: #b8860b;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-left: 10px;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    nav a:hover { color: #d4af37; }
-    .hero { text-align:center; padding:80px 20px; background: rgba(0,0,0,0.5); border-radius:1rem; margin:2rem; }
-    .hero h2 { font-size:3rem; margin-bottom:10px; color:#ffd700; }
-    .hero p { font-size:1.3rem; }
-    .section { max-width:1200px; margin:2rem auto; padding:2rem; background: rgba(0,0,0,0.6); border-radius:1rem; }
-    .section h3 { text-align:center; font-size:2rem; margin-bottom:1.5rem; color:#d4af37; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
-    .card { background: rgba(0,0,0,0.7); border-radius:1rem; padding:1rem; text-align:center; transition: transform 0.3s; }
-    .card:hover { transform:scale(1.05); }
-    .card img { width:100%; border-radius:0.75rem; margin-bottom:0.5rem; }
-    .card h4 { margin:0.5rem 0; color:#ffd700; }
-    .price { font-weight:700; color:#90ee90; margin-bottom:0.5rem; }
-    footer { text-align:center; padding:2rem; background: rgba(0,0,0,0.85); margin-top:2rem; }
-    .float-btn { position:fixed; width:70px; height:70px; bottom:20px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:32px; color:#fff; box-shadow:0 5px 25px rgba(0,0,0,0.6); z-index:1000; transition:all 0.3s; }
-    .float-btn:hover { transform:scale(1.2); }
-    .whatsapp-float { right:20px; background-color:#16a34a; }
-    .facebook-float { right:100px; background-color:#1877F2; }
+    nav a:hover {
+      background: #daa520;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero .btn-primary {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ffd700;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .hero .btn-primary:hover {
+      background: #daa520;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px;
+      border-radius: 15px;
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+    .products, .models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .card h4 {
+      margin: 10px 0;
+      color: #ffd700;
+    }
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #90ee90;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      margin-top: 40px;
+    }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-float i {
+      margin-top: 16px;
+    }
+    /* Botón flotante Facebook */
+    .facebook-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 110px;
+      right: 40px;
+      background-color: #1877f2;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .facebook-float i {
+      margin-top: 16px;
+    }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="logo">
       <img src="https://i.imgur.com/QkFyGMz.png" alt="Logo Remolques MX">
       <h1>Remolques MX</h1>
     </div>
-    <nav>
+    <nav class="ml-10 flex gap-4">
       <a href="index.html">🏠 Inicio</a>
       <a href="herreria.html">🔨 Herrería Personalizada</a>
     </nav>
@@ -75,14 +169,15 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h2>Remolques Premium Ultra</h2>
-    <p>Diseñados para destacar, durabilidad máxima y estilo sin comparación.</p>
+    <h2>Bienvenido a Remolques MX</h2>
+    <p>Remolques de calidad premium fabricados en Jalisco</p>
+    <a href="https://github.com/minammeee/Remolquesmx-/raw/main/Catalago_Remolques_MX.pdf" download class="btn-primary">📑 Descargar Catálogo</a>
   </section>
 
   <!-- Productos Prefabricados -->
   <section class="section">
     <h3>Productos Prefabricados</h3>
-    <div class="grid">
+    <div class="products">
       <div class="card">
         <img src="https://i.imgur.com/WQlJjCI.jpg" alt="Toldo para Puerta 1">
         <h4>Toldo para Puerta 1</h4>
@@ -101,7 +196,7 @@
   <!-- Modelos Estrella -->
   <section class="section">
     <h3>Modelos Estrella</h3>
-    <div class="grid">
+    <div class="models">
       <div class="card">
         <img src="https://i.imgur.com/RYTzCzA.jpg" alt="Remolque B2">
         <h4>Remolque B2</h4>
@@ -121,12 +216,11 @@
   </footer>
 
   <!-- Botones flotantes -->
-  <a href="https://wa.me/523347540496?text=Hola!%20Estoy%20interesado%20en%20un%20remolque" class="float-btn whatsapp-float" target="_blank">
+  <a href="https://wa.me/5213312345678" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
-  <a href="https://www.facebook.com/RemolquesMX" class="float-btn facebook-float" target="_blank">
+  <a href="https://facebook.com" class="facebook-float" target="_blank">
     <i class="fab fa-facebook-f"></i>
   </a>
-
 </body>
 </html>
